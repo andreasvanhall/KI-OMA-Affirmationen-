@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Affirmation des Tages</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fef9f4;
+      color: #333;
+      text-align: center;
+      padding: 60px;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+    #affirmation {
+      font-size: 1.5em;
+      color: #5e3c58;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    button {
+      background-color: #e8a87c;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c97b63;
+    }
+  </style>
+</head>
+<body>
+  <h1>Deine Affirmation des Tages</h1>
+  <div id="affirmation">Hier erscheint deine Affirmation …</div>
+  <button onclick="showAffirmation()">Neue Affirmation anzeigen</button>
+
+  <script>
+    const affirmations = [
+      "Ich bin genug – auch ohne Leistung.",
+      "Ich darf Fehler machen und trotzdem weitergehen.",
+      "Ich darf langsam sein.",
+      "Ich bin auf dem Weg – und das genügt.",
+      "Ich darf neu anfangen – immer wieder.",
+      "Ich darf mir selbst vertrauen.",
+      "Ich bin mehr als mein Spiegelbild.",
+      "Ich darf atmen und das reicht.",
+      "Ich darf träumen, auch mit 50.",
+      "Ich darf Nein sagen – ohne Schuld."
+    ];
+
+    function showAffirmation() {
+      const random = affirmations[Math.floor(Math.random() * affirmations.length)];
+      document.getElementById("affirmation").textContent = random;
+    }
+
+    // initial anzeigen
+    showAffirmation();
+  </script>
+</body>
+</html>
