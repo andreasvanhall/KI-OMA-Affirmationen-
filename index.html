@@ -1,67 +1,94 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Affirmation des Tages</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KI-OMA Affirmationen</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      font-family: 'Georgia', serif;
       background-color: #fef9f4;
       color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       text-align: center;
-      padding: 60px;
+      padding: 20px;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 30px;
+
+    .affirmation-box {
+      max-width: 800px;
+      font-size: 1.6rem;
+      line-height: 1.7;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
     }
-    #affirmation {
-      font-size: 1.5em;
-      color: #5e3c58;
-      margin: 20px auto;
-      max-width: 600px;
-    }
+
     button {
-      background-color: #e8a87c;
-      color: white;
-      border: none;
-      padding: 12px 24px;
       font-size: 1rem;
-      border-radius: 5px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      background-color: #333;
+      color: #fff;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
+
     button:hover {
-      background-color: #c97b63;
+      background-color: #555;
     }
   </style>
 </head>
 <body>
-  <h1>Deine Affirmation des Tages</h1>
-  <div id="affirmation">Hier erscheint deine Affirmation …</div>
-  <button onclick="showAffirmation()">Neue Affirmation anzeigen</button>
+
+  <div class="affirmation-box" id="affirmationBox">
+    Klick auf den Button, um eine Affirmation zu lesen.
+  </div>
+
+  <button onclick="newAffirmation()">Neue Affirmation anzeigen</button>
 
   <script>
     const affirmations = [
-      "Ich bin genug – auch ohne Leistung.",
-      "Ich darf Fehler machen und trotzdem weitergehen.",
-      "Ich darf langsam sein.",
-      "Ich bin auf dem Weg – und das genügt.",
-      "Ich darf neu anfangen – immer wieder.",
-      "Ich darf mir selbst vertrauen.",
-      "Ich bin mehr als mein Spiegelbild.",
-      "Ich darf atmen und das reicht.",
-      "Ich darf träumen, auch mit 50.",
-      "Ich darf Nein sagen – ohne Schuld."
+      "Ich bin genug, so wie ich bin.",
+      "Ich wachse mit jeder Herausforderung.",
+      "Mein Herz ist offen für Freude und Liebe.",
+      "Ich vertraue dem Weg, den das Leben für mich gewählt hat.",
+      "Heute bin ich mutig, freundlich und klar.",
+      "Meine Vergangenheit definiert nicht meine Zukunft.",
+      "Ich bin sicher, geführt und beschützt.",
+      "Ich darf mich ausruhen, ohne mich schuldig zu fühlen.",
+      "Ich liebe meinen Körper, mein Geist ist wach und mein Herz ist offen.",
+      "Jeder Atemzug bringt neue Kraft.",
+      "Ich darf Fehler machen – sie machen mich menschlich.",
+      "Ich bin in meinem eigenen Tempo genau richtig.",
+      "Ich lasse los, was mir nicht mehr dient.",
+      "Ich entscheide mich für inneren Frieden.",
+      "Ich bin eine Quelle der Weisheit und Wärme.",
+      "Ich schenke mir selbst Mitgefühl.",
+      "Ich darf mich verändern, so oft ich möchte.",
+      "Ich trage Kraft und Ruhe in mir.",
+      "Ich bin verbunden mit allem, was mir guttut.",
+      "Ich darf mich zeigen, so wie ich bin.",
+      "Ich schenke mir selbst die Erlaubnis, glücklich zu sein.",
+      "Jeder Tag bringt mir neue Möglichkeiten.",
+      "Ich bin dankbar für meinen Weg bis hierher.",
+      "Ich bin stark – auch in der Stille.",
+      "Ich bin die Heldin meiner eigenen Geschichte."
     ];
 
-    function showAffirmation() {
-      const random = affirmations[Math.floor(Math.random() * affirmations.length)];
-      document.getElementById("affirmation").textContent = random;
+    function newAffirmation() {
+      const randomIndex = Math.floor(Math.random() * affirmations.length);
+      const affirmation = affirmations[randomIndex];
+      document.getElementById("affirmationBox").innerText = affirmation;
     }
-
-    // initial anzeigen
-    showAffirmation();
   </script>
+
 </body>
 </html>
